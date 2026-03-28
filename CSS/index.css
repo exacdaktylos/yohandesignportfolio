@@ -904,10 +904,9 @@ footer {
   }
 }
 
-@media (max-width: 768px) { ... } block,
-   alongside the existing .nav-links / .nav-btn rules:
- 
-   .hamburger,
-   .mobile-menu {
-     display: flex;
-   }
+@media (max-width: 768px) {
+  .hamburger,
+  .mobile-menu {
+    display: flex;
+  }
+}

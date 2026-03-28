@@ -963,11 +963,8 @@ footer {
     gap: 0.5rem;
   }
 
-  @media (max-width: 768px) { ... } block,
-   alongside the existing .nav-links / .nav-btn rules:
- 
-   .hamburger,
-   .mobile-menu {
-     display: flex;
-   }
+  .hamburger,
+  .mobile-menu {
+    display: flex;
+  }
 }
