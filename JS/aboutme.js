@@ -2,6 +2,49 @@
    YOHAN WICKRAMASINGHE — About Me Scripts
    ============================================= */
 
+/* =================================================
+   HAMBURGER MENU — paste this into index.js
+   AND into aboutme.js (both files need it)
+
+   WHERE TO PASTE: add at the top of your JS file,
+   before any existing code.
+   ================================================= */
+
+const hamburger  = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+function openMenu() {
+  hamburger.classList.add('open');
+  mobileMenu.classList.add('open');
+  hamburger.setAttribute('aria-expanded', 'true');
+  mobileMenu.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden'; /* stops background scrolling */
+}
+
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+/* Toggle on hamburger click */
+hamburger.addEventListener('click', () => {
+  hamburger.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+/* Close when a menu link is tapped */
+document.querySelectorAll('.mobile-link').forEach((link) => {
+  link.addEventListener('click', closeMenu);
+});
+
+/* Close on Escape key */
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMenu();
+});
+
+
 
 /* Scroll reveal
    Watches .reveal elements and adds .in
