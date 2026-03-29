@@ -1,5 +1,5 @@
 /* =============================================
-   YOHAN WICKRAMASINGHE — Contact Page Scripts
+   YOHAN WICKRAMASINGHE — Projects Page Scripts
    ============================================= */
 
 /* Hamburger menu */
@@ -42,44 +42,34 @@ window.addEventListener('scroll', () => {
 });
 
 
-/* Project type chip selector
-   Clicking a chip toggles it selected and
-   writes the value to the hidden input.    */
-const chips          = document.querySelectorAll('.chip');
-const projectTypeInput = document.getElementById('project-type');
+/* Filter bar
+   Clicking a category button shows only matching
+   .project-item elements, hides the rest.        */
+const filterBtns  = document.querySelectorAll('.filter-btn');
+const projectItems = document.querySelectorAll('.project-item');
+const emptyState  = document.getElementById('empty-state');
 
-chips.forEach(chip => {
-  chip.addEventListener('click', () => {
-    const isSelected = chip.classList.contains('selected');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filter = btn.dataset.filter;
 
-    /* Deselect all first */
-    chips.forEach(c => c.classList.remove('selected'));
+    /* Update active button */
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-    /* Toggle this one */
-    if (!isSelected) {
-      chip.classList.add('selected');
-      projectTypeInput.value = chip.dataset.value;
-    } else {
-      projectTypeInput.value = '';
-    }
+    /* Show / hide projects */
+    let visibleCount = 0;
+    projectItems.forEach(item => {
+      const match = filter === 'all' || item.dataset.category === filter;
+      if (match) {
+        item.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+
+    /* Show empty state if nothing matches */
+    emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
   });
-});
-
-
-/* Form submission
-   Uses mailto: — opens the user's email client.
-   Shows a thank-you state after clicking send.
-   EDIT: For a real backend form, replace the
-   action attribute and this handler with a fetch()
-   call to your form API (e.g. Formspree, Netlify). */
-const form        = document.getElementById('contact-form');
-const successState = document.getElementById('form-success');
-
-form.addEventListener('submit', (e) => {
-  /* Let the mailto: action fire naturally,
-     then swap to the success view after a beat. */
-  setTimeout(() => {
-    form.style.display = 'none';
-    successState.style.display = 'block';
-  }, 300);
 });
