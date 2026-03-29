@@ -19,6 +19,12 @@
 
 html { scroll-behavior: smooth; }
 
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 body {
   font-family: 'Cabinet Grotesk', sans-serif;
   background: var(--bg);
