@@ -880,6 +880,18 @@ footer {
     padding: 3rem 1.5rem 4rem;
   }
 
+  /* 'Yohan' line */
+  .intro-col h1 {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* 'Wickramasinghe' — 15 chars needs much tighter sizing */
+  .intro-col h1 .grad-text {
+    font-size: clamp(1.4rem, 5.8vw, 2rem);
+  }
+
   .hero-inner {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -966,5 +978,14 @@ footer {
   .hamburger,
   .mobile-menu {
     display: flex;
+  }
+}
+
+@media (max-width: 360px) {
+  .intro-col h1 {
+    font-size: 8vw;
+  }
+  .intro-col h1 .grad-text {
+    font-size: 5.2vw;
   }
 }
