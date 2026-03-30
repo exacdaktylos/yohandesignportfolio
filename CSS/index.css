@@ -189,6 +189,7 @@ nav {
 .hero h1 .line {
   display: block;
   overflow: hidden;
+  padding-bottom: 0.12em; /* prevents descenders being clipped by overflow:hidden */
 }
 
 .hero h1 .word {
@@ -862,6 +863,11 @@ footer {
   .hero {
     padding: 3rem 1.5rem;
     min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 11vw, 3.5rem);
+    line-height: 1.05;
   }
 
   .hero-stats {
