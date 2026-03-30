@@ -189,7 +189,7 @@ nav {
 .hero h1 .line {
   display: block;
   overflow: hidden;
-  padding-bottom: 0.12em; /* prevents descenders being clipped by overflow:hidden */
+  padding-bottom: 0.15em;
 }
 
 .hero h1 .word {
@@ -865,9 +865,12 @@ footer {
     min-height: auto;
   }
 
+  /* 'experiences' is the longest word — 7.5vw keeps it on one line
+     even on 360px wide screens while still looking bold and impactful */
   .hero h1 {
-    font-size: clamp(2.6rem, 11vw, 3.5rem);
-    line-height: 1.05;
+    font-size: clamp(2rem, 7.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
 
   .hero-stats {
@@ -917,6 +920,12 @@ footer {
 @media (max-width: 480px) {
   .timeline {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero h1 {
+    font-size: 6.8vw;
   }
 }
 
