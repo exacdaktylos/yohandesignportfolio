@@ -44,10 +44,12 @@ window.addEventListener('scroll', () => {
 
 /* Filter bar
    Clicking a category button shows only matching
-   .project-item elements, hides the rest.        */
-const filterBtns  = document.querySelectorAll('.filter-btn');
+   .project-item elements, hides the rest.
+   FIX: We hide the parent .project-link <a> tag so
+   the card isn't clickable when filtered out.       */
+const filterBtns   = document.querySelectorAll('.filter-btn');
 const projectItems = document.querySelectorAll('.project-item');
-const emptyState  = document.getElementById('empty-state');
+const emptyState   = document.getElementById('empty-state');
 
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -57,14 +59,18 @@ filterBtns.forEach(btn => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    /* Show / hide projects */
+    /* Show / hide projects — target the parent <a> so the
+       link itself is also hidden and non-clickable          */
     let visibleCount = 0;
     projectItems.forEach(item => {
       const match = filter === 'all' || item.dataset.category === filter;
+      const link  = item.closest('.project-link') || item; // fall back to item if no wrapper
       if (match) {
+        link.style.display = '';
         item.classList.remove('hidden');
         visibleCount++;
       } else {
+        link.style.display = 'none';
         item.classList.add('hidden');
       }
     });
