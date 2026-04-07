@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs - Yohan Wickramasinghe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Cabinet+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../CSS/blogs.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="logo">YW<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="aboutme.html">About Me</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="blogs.html" class="active">Blogs</a></li>
+    </ul>
+    <a href="contactme.html" class="nav-btn">Contact me</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="aboutme.html" class="mobile-link">About Me</a></li>
+        <li><a href="projects.html" class="mobile-link">Projects</a></li>
+        <li><a href="blogs.html" class="mobile-link active">Blogs</a></li>
+      </ul>
+      <a href="contactme.html" class="mobile-cta">Contact me</a>
+    </div>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="hero-bg">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+    </div>
+    <div class="page-hero-inner">
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Medium Articles
+      </div>
+      <h1>More than<br><span class="grad-text">just design</span></h1>
+      <p class="hero-sub">Thoughts on marketing, leadership, and creativity, written to explore ideas that matter.</p>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-wrap">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="marketing">Marketing</button>
+      <button class="filter-btn" data-filter="design">Design</button>
+      <button class="filter-btn" data-filter="leadership">Leadership</button>
+      <button class="filter-btn" data-filter="personal">Personal</button>
+    </div>
+  </div>
+
+  <!-- BLOGS GRID -->
+  <main class="blogs-wrap">
+    <div class="blogs-grid" id="blogs-grid">
+
+      <!-- =============================================
+           EDIT: Add or remove .blog-item blocks below.
+           - data-category must match a filter-btn data-filter value
+           - Set data-url to your Medium article link
+           - Replace cover image src, title, excerpt, tags, date, read-time
+           ============================================= -->
+
+      <a href="https://medium.com/@yohanwick17/why-messy-design-is-winning-in-2026-the-rise-of-the-anti-ai-aesthetic-9c04bc798359" target="_blank" rel="noopener" class="blog-link" data-category="marketing">
+        <div class="blog-item reveal" data-category="marketing">
+          <div class="blog-thumb th-a">
+            <div class="thumb-chip">Marketing</div>
+            <img src="../Assets/medium1.png" alt="Why Attraction Campaigns Need Emotion First">
+            <div class="blog-overlay">
+              <span>Read on Medium →</span>
+            </div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat">Marketing</span>
+              <span class="blog-badge badge-orange">Featured</span>
+            </div>
+            <div class="blog-title">Why “Messy” Design is Winning in 2026: The Rise of the Anti-AI Aesthetic</div>
+            <div class="blog-excerpt">Stop chasing the grid. Why "Imperfect by Design" is the top marketing trend of 2026. Read the breakdown here.</div>
+            <div class="blog-footer">
+              <span class="blog-date">Jan 2026</span>
+              <span class="blog-dot">·</span>
+              <span class="blog-read">4 min read</span>
+            </div>
+            <div class="blog-tags">
+              <span class="tag">Campaigns</span>
+              <span class="tag">Emotion</span>
+              <span class="tag">Strategy</span>
+            </div>
+          </div>
+        </div>
+      </a>
+<!--
+      <a href="https://medium.com/@yohan" target="_blank" rel="noopener" class="blog-link" data-category="design">
+        <div class="blog-item reveal" data-category="design">
+          <div class="blog-thumb th-b">
+            <div class="thumb-chip">Design</div>
+            <img src="../Assets/blog-placeholder-2.png" alt="Visual Consistency Isn't Boring — It's Trust">
+            <div class="blog-overlay">
+              <span>Read on Medium →</span>
+            </div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat">Design</span>
+              <span class="blog-badge badge-violet">Design</span>
+            </div>
+            <div class="blog-title">Visual Consistency Isn't Boring — It's Trust</div>
+            <div class="blog-excerpt">Brands that look the same everywhere aren't being lazy. They're building recognition. A breakdown of why design systems are the most underrated marketing tool.</div>
+            <div class="blog-footer">
+              <span class="blog-date">Feb 2026</span>
+              <span class="blog-dot">·</span>
+              <span class="blog-read">5 min read</span>
+            </div>
+            <div class="blog-tags">
+              <span class="tag">Branding</span>
+              <span class="tag">Design Systems</span>
+              <span class="tag">Visual</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://medium.com/@yohan" target="_blank" rel="noopener" class="blog-link" data-category="leadership">
+        <div class="blog-item reveal" data-category="leadership">
+          <div class="blog-thumb th-e">
+            <div class="thumb-chip">Leadership</div>
+            <img src="../Assets/blog-placeholder-3.png" alt="What AIESEC Taught Me About Leading Without Authority">
+            <div class="blog-overlay">
+              <span>Read on Medium →</span>
+            </div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat">Leadership</span>
+              <span class="blog-badge badge-cyan">Leadership</span>
+            </div>
+            <div class="blog-title">What AIESEC Taught Me About Leading Without Authority</div>
+            <div class="blog-excerpt">When you can't give orders, you have to earn buy-in. These are the lessons I took from leading volunteer-driven teams at AIESEC in SLIIT.</div>
+            <div class="blog-footer">
+              <span class="blog-date">Mar 2026</span>
+              <span class="blog-dot">·</span>
+              <span class="blog-read">6 min read</span>
+            </div>
+            <div class="blog-tags">
+              <span class="tag">AIESEC</span>
+              <span class="tag">Teams</span>
+              <span class="tag">Growth</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://medium.com/@yohan" target="_blank" rel="noopener" class="blog-link" data-category="personal">
+        <div class="blog-item reveal" data-category="personal">
+          <div class="blog-thumb th-c">
+            <div class="thumb-chip">Personal</div>
+            <img src="../Assets/blog-placeholder-4.png" alt="On Applying for Things You're Not Sure You're Ready For">
+            <div class="blog-overlay">
+              <span>Read on Medium →</span>
+            </div>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta-row">
+              <span class="blog-cat">Personal</span>
+              <span class="blog-badge badge-green">Reflections</span>
+            </div>
+            <div class="blog-title">On Applying for Things You're Not Sure You're Ready For</div>
+            <div class="blog-excerpt">Imposter syndrome before you even start. I write about the mindset shift that changed how I approach opportunities — and why readiness is overrated.</div>
+            <div class="blog-footer">
+              <span class="blog-date">Mar 2026</span>
+              <span class="blog-dot">·</span>
+              <span class="blog-read">3 min read</span>
+            </div>
+            <div class="blog-tags">
+              <span class="tag">Mindset</span>
+              <span class="tag">Imposter Syndrome</span>
+              <span class="tag">Growth</span>
+            </div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+-->
+    <!-- Empty state -->
+    <div class="empty-state" id="empty-state" style="display:none">
+      <div class="empty-icon">◎</div>
+      <div class="empty-text">No articles in this category yet.</div>
+    </div>
+
+  </main>
+
+  <!-- MEDIUM CTA STRIP -->
+  <div class="medium-strip reveal">
+    <div class="medium-inner">
+      <div class="medium-m">M</div>
+      <div class="medium-copy">
+        <div class="medium-label">All articles live on Medium</div>
+        <div class="medium-sub">Follow along for new pieces on marketing, design, and everything in between.</div>
+      </div>
+      <a href="https://medium.com/@yohanwick17" target="_blank" rel="noopener" class="medium-btn">Follow on Medium →</a>
+    </div>
+  </div>
+
+  <!-- CONTACT STRIP -->
+  <div class="contact-wrap reveal">
+    <div class="contact-inner">
+      <h2>Got a project in mind? <span><br>Let's talk.</span></h2>
+      <a href="contactme.html" class="contact-email">Get in touch →</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Yohan Wickramasinghe</span>
+    <span>yohanwick17@gmail.com · LinkedIn</span>
+  </footer>
+
+  <script src="../JS/blogs.js"></script>
+</body>
+</html>
